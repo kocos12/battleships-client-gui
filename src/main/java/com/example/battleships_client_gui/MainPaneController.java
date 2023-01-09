@@ -46,12 +46,34 @@ public class MainPaneController {
                 client.sendToServer("Ready");
                 client.sendToServer("Ready");
                 matchmakingInfo.setText(client.getInfo());
+                prepareGridForBattle();
             }else{
                 startInfoLabel.setText("Zaloguj sie aby rozpoczac gre!");
             }
         });
     }
+    private void prepareGridForBattle(){
+        for (int i = 0; i <10; i++) {
+            for (int j = 0; j < 10; j++) {
+                ToggleButton battlegroundChunkButton = new ToggleButton("?");
+                battlegroundChunkButton.setAlignment(Pos.CENTER);
+                battlegroundChunkButton.setPrefSize(40,40);
+                battlegroundChunkButton.setId(String.valueOf(i) + j);
 
+                battlegroundChunkButton.setOnAction(actionEvent -> {
+                    if(client.isLogged()){
+                        if (battlegroundChunkButton.isSelected()) {
+                            String answer = client.shoot(battlegroundChunkButton.getId());
+                            battlegroundChunkButton.setText(answer);
+                        }
+                    }else{
+                        startInfoLabel.setText("Zaloguj sie aby rozpoczac gre!");
+                    }
+                });
+                battlegroundGrid.add(battlegroundChunkButton, i, j);
+            }
+        }
+    }
     private void placeShipsOnBattleground() {
         for (int i = 0; i <10; i++) {
             for (int j = 0; j < 10; j++) {

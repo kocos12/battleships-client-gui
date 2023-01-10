@@ -17,12 +17,11 @@
             <children>
                 <VBox prefHeight="399.0" prefWidth="165.0">
                     <children>
-                        <Label fx:id="title" alignment="CENTER" prefHeight="57.0" prefWidth="177.0" text="Battleships Game">
+                        <Label fx:id="title" alignment="CENTER" prefHeight="94.0" prefWidth="165.0" text="Battleships Game">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Label>
-                        <Label fx:id="subtitle" prefHeight="47.0" prefWidth="103.0" text="  Log in" />
                         <Label fx:id="loginLabel" prefHeight="19.0" prefWidth="40.0" text=" Login" />
                         <TextField fx:id="login" />
                         <Label fx:id="passwdLabel" prefHeight="20.0" prefWidth="102.0" text=" Password" />
@@ -64,8 +63,16 @@
             </GridPane>
             <VBox prefHeight="399.0" prefWidth="128.0">
                <children>
-                  <Button fx:id="startGameButton" mnemonicParsing="false" prefHeight="47.0" prefWidth="131.0" text="Start game" />
+                  <Button fx:id="startGameButton" mnemonicParsing="false" prefHeight="54.0" prefWidth="128.0" text="Start game">
+                     <VBox.margin>
+                        <Insets left="3.0" top="10.0" />
+                     </VBox.margin></Button>
                   <Label fx:id="startInfoLabel" prefHeight="51.0" prefWidth="128.0" textAlignment="CENTER" wrapText="true" />
+                  <Label fx:id="whoseTurnLabel" layoutX="10.0" layoutY="74.0" prefHeight="51.0" prefWidth="128.0" textAlignment="CENTER" wrapText="true">
+                     <VBox.margin>
+                        <Insets top="200.0" />
+                     </VBox.margin>
+                  </Label>
                </children>
             </VBox>
             </children>

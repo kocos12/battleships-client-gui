@@ -31,6 +31,8 @@ public class MainPaneController {
     private Button startGameButton;
     @FXML
     private Label startInfoLabel;
+    @FXML
+    private Label whoseTurnLabel;
     private Client client;
 
     public void initialize() {
@@ -46,6 +48,7 @@ public class MainPaneController {
                 client.sendToServer("Ready");
                 client.sendToServer("Ready");
                 //matchmakingInfo.setText(client.getInfo());
+                whoseTurnLabel.setText(client.getInfo());
                 prepareGridForBattle();
             }else{
                 startInfoLabel.setText("Zaloguj sie aby rozpoczac gre!");
@@ -65,6 +68,7 @@ public class MainPaneController {
                         if (battlegroundChunkButton.isSelected()) {
                             String answer = client.shoot(battlegroundChunkButton.getId());
                             battlegroundChunkButton.setText(answer);
+                            whoseTurnLabel.setText(client.getInfo());
                         }
                     }else{
                         startInfoLabel.setText("Zaloguj sie aby rozpoczac gre!");

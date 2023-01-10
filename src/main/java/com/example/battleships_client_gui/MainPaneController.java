@@ -45,7 +45,7 @@ public class MainPaneController {
                 startInfoLabel.setText("");
                 client.sendToServer("Ready");
                 client.sendToServer("Ready");
-                matchmakingInfo.setText(client.getInfo());
+                //matchmakingInfo.setText(client.getInfo());
                 prepareGridForBattle();
             }else{
                 startInfoLabel.setText("Zaloguj sie aby rozpoczac gre!");

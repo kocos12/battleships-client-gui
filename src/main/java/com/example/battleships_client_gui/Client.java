@@ -44,7 +44,7 @@ public class Client{
             writer.println(p);
             try {
                 message = reader.readLine();
-                System.out.println(message);
+                //System.out.println(message);
                 if (compare(message, "Nie poprawne dane logowania! Spróbuj ponownie")) {
                     this.isLogged = false;
                 }
@@ -67,7 +67,15 @@ public class Client{
         try {
             return reader.readLine();
         } catch (IOException e) {
-            return "";
+            return "emptye exep";
+        }
+    }
+    public String getInfoWithWait(){
+        try {
+            waitForInput();
+            return reader.readLine();
+        } catch (IOException e) {
+            return "emptye exep";
         }
     }
     public void sendToServer(String message){
@@ -86,4 +94,14 @@ public class Client{
         writer.println(coord);
         return getInfo();
     }
+    public void waitForInput() throws IOException {
+        while (!reader.ready()) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                // do nothing
+            }
+        }
+    }
+
 }

@@ -68,7 +68,7 @@
                         <Insets left="3.0" top="10.0" />
                      </VBox.margin></Button>
                   <Label fx:id="startInfoLabel" prefHeight="51.0" prefWidth="128.0" textAlignment="CENTER" wrapText="true" />
-                  <Label fx:id="whoseTurnLabel" layoutX="10.0" layoutY="74.0" prefHeight="51.0" prefWidth="128.0" textAlignment="CENTER" wrapText="true">
+                  <Label fx:id="whoseTurnLabel" contentDisplay="CENTER" layoutX="10.0" layoutY="74.0" prefHeight="51.0" prefWidth="128.0" textAlignment="CENTER" wrapText="true">
                      <VBox.margin>
                         <Insets top="200.0" />
                      </VBox.margin>

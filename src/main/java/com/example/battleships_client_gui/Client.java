@@ -6,8 +6,8 @@ import java.net.UnknownHostException;
 
 public class Client{
 
-    private String hostname;
-    private int port;
+    private final String hostname;
+    private final int port;
     private boolean isLogged;
     private PrintWriter writer;
     private BufferedReader reader;
@@ -70,14 +70,7 @@ public class Client{
             return "emptye exep";
         }
     }
-    public String getInfoWithWait(){
-        try {
-            waitForInput();
-            return reader.readLine();
-        } catch (IOException e) {
-            return "emptye exep";
-        }
-    }
+
     public void sendToServer(String message){
             writer.println(message);
     }
@@ -94,14 +87,4 @@ public class Client{
         writer.println(coord);
         return getInfo();
     }
-    public void waitForInput() throws IOException {
-        while (!reader.ready()) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                // do nothing
-            }
-        }
-    }
-
 }

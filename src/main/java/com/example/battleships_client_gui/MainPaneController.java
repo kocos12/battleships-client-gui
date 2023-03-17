@@ -68,8 +68,6 @@ public class MainPaneController {
                         if (battlegroundChunkButton.isSelected()) {
                             String answer = client.shoot(battlegroundChunkButton.getId());
                             battlegroundChunkButton.setText(answer);
-                            //whoseTurnLabel.setText("Ruch przeciwnika");
-                            //whoseTurnLabel.setText(client.getInfo());
                         }
                     }else{
                         startInfoLabel.setText("Zaloguj sie aby rozpoczac gre!");
